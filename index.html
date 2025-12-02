@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Home Bakery - Công Thức Bánh Ngọt Đơn Giản</title>
+    <link rel="stylesheet" href="cuoiky.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous" defer></script>
+    
+</head>
+<body>
+    
+    <header id="main-header" class="sticky">
+        <div class="container header-content">
+            <div class="logo">Sweet Home Bakery</div>
+            <nav id="main-nav">
+                <a href="#hero" class="active">Home</a>
+                <a href="#recipes">Recipes</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#">Video</a>
+                <a href="#events">Events</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="fade-in">
+    <div class="container">
+        <div class="hero-text-box">
+            <h1>Hương vị Ngọt Ngào từ Bếp Nhà</h1>
+            <p>Khám phá niềm vui làm bánh với những công thức đơn giản và đáng yêu nhất.</p>
+            <a href="#recipes" class="button primary">Xem Công Thức Mới</a>
+        </div>
+    </div>
+</section>
+
+        <section id="about" class="section-padding slide-up">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Hành Trình Bếp Bánh</h2>
+                    <p>Mỗi chiếc bánh không chỉ là nguyên liệu, mà còn là câu chuyện về tình yêu và sự kiên nhẫn. Sweet Home Bakery ra đời từ một căn bếp nhỏ, với mong muốn lan tỏa niềm vui làm bánh ngọt đơn giản như cookies, brownies, flan... Dù bạn là người mới bắt đầu hay đã có kinh nghiệm, đây là nơi để bạn tìm thấy công thức hoàn hảo.</p>
+                    <p>Hãy cùng nhau tạo nên những khoảnh khắc ngọt ngào!</p>
+                </div>
+                <div class="about-image-wrapper">
+                    <img src="https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=60,width=450,height=450,dpr=2/tour_img/fee2461eafacf255486974f74476e60f3759f97c3b7d47f85b76c7ceaf44a925.jpg" alt="Một góc bếp ấm áp hoặc đang làm bánh" class="about-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="recipes" class="section-padding bg-light-cream">
+            <div class="container">
+                <h2 class="section-title text-center">Các Công Thức Bánh Ngọt Mới Nhất</h2>
+                
+                <div class="recipe-grid">
+                    
+                    <div class="recipe-card slide-up" onclick="showRecipeDetail('recipe-1')">
+                        <div class="recipe-image-wrapper">
+                             <img src="https://thefirstyearblog.com/wp-content/uploads/2023/01/Chocolate-Cookies-Square-2023.png" alt="Cookies Socola">
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Cookies Socola Chuẩn Vị</h3>
+                            <p class="recipe-meta"><i class="far fa-clock"></i> 45 phút</p>
+                            <p class="recipe-meta difficulty-stars">
+                                Độ khó: <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card slide-up" onclick="showRecipeDetail('recipe-2')">
+                        <div class="recipe-image-wrapper">
+                             <img src="https://mojo.generalmills.com/api/public/content/rhZjxjpEvkmKr4gUqLzK3w_webp_base.webp?v=b9517d53&t=191ddcab8d1c415fa10fa00a14351227" alt="Brownie Cacao">
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Brownie Cacao Dẻo</h3>
+                            <p class="recipe-meta"><i class="far fa-clock"></i> 60 phút</p>
+                            <p class="recipe-meta difficulty-stars">
+                                Độ khó: <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card slide-up" onclick="showRecipeDetail('recipe-3')">
+                        <div class="recipe-image-wrapper">
+                             <img src="https://natashaskitchen.com/wp-content/uploads/2023/04/Flan-Recipe-SQ.jpg" alt="Bánh Flan">
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Bánh Flan Sữa Tươi</h3>
+                            <p class="recipe-meta"><i class="far fa-clock"></i> 35 phút (chưa tính tủ lạnh)</p>
+                            <p class="recipe-meta difficulty-stars">
+                                Độ khó: <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery" class="section-padding slide-up">
+            <div class="container">
+                <h2 class="section-title text-center">Bộ Sưu Tập Ngọt Ngào</h2>
+                <div class="image-grid">
+                    <div class="gallery-item"><img src="https://images.ctfassets.net/0e6jqcgsrcye/1hV5JXjXMMAz2dGoWAVAS9/ed0a71f31f00e98ddc0b0a4172620d0a/Sea_salt_miso_cookies.JPG" alt="Bánh Cookies"></div>
+                    <div class="gallery-item"><img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2025_05/2091571/best-brownies-2x1-zz-250131.jpg" alt="Bánh Brownies"></div>
+                    <div class="gallery-item"><img src="https://file.hstatic.net/200000333181/article/creamy-caramel-flan_exps_ft20_2197_f_0723_1_e3fbb025c7d24960bc978a73ec76c5dc.jpg" alt="Bánh Flan"></div>
+                    <div class="gallery-item"><img src="https://www.tasteofhome.com/wp-content/uploads/2024/11/Overnight-Cinnamon-Rolls_EXPS_TOHD24_172628_LeticiaAlmeida_08.jpg" alt="Cinnamon roll"></div>
+                    <div class="gallery-item"><img src="https://www.bhg.com/thmb/iL-5Q6gGjmXkxCKqEovughTLQAo=/3000x0/filters:no_upscale():strip_icc()/how-to-bake-how-to-make-cupcakes-hero-01-12c03f3eff374d569b0565bff7d9e597.jpg" alt="Bánh Cupcake"></div>
+                    <div class="gallery-item"><img src="https://daddioskitchen.com/wp-content/uploads/2022/11/IMG-2885.jpg" alt="Bánh Pie"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="section-padding slide-up bg-light-cream">
+            <div class="container">
+                <h2 class="section-title text-center">Lịch Workshop Bánh Ngọt</h2>
+                <div class="event-schedule">
+                    <div class="event-item">
+                        <div class="event-info">
+                            <h3>Workshop "Cookies Giáng Sinh"</h3>
+                            <p class="event-meta"><i class="far fa-clock"></i> 09:00 - 12:00, 15/12/2025</p>
+                            <p class="event-meta"><i class="fas fa-map-marker-alt"></i> Sweet Home Studio, Q.3, TP.HCM</p>
+                        </div>
+                        <a href="#" class="button secondary">Đăng Ký</a>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-info">
+                            <h3>"Brownies & Kem" Cơ Bản</h3>
+                            <p class="event-meta"><i class="far fa-clock"></i> 14:00 - 17:00, 28/12/2025</p>
+                            <p class="event-meta"><i class="fas fa-map-marker-alt"></i> Sweet Home Studio, Q.3, TP.HCM</p>
+                        </div>
+                        <a href="#" class="button secondary">Đăng Ký</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding slide-up">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
+                    <p><i class="fas fa-envelope"></i> Email: contact@sweethomebakery.vn</p>
+                    <p><i class="fab fa-facebook-f"></i> Facebook: /SweetHomeBakeryVN</p>
+                    <p><i class="fab fa-instagram"></i> Instagram: @sweethomebakery</p>
+                    <div class="map-placeholder">
+                        <p>Google Map Placeholder</p>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Tên của bạn" required>
+                        <input type="email" placeholder="Email của bạn" required>
+                        <textarea rows="5" placeholder="Tin nhắn..." required></textarea>
+                        <button type="submit" class="button primary">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 Sweet Home Bakery. Taste the sweetness of home.</p>
+        </div>
+    </footer>
+
+    <section id="recipe-detail-modal" class="recipe-detail-overlay">
+        <div class="recipe-detail-content">
+            <button class="close-button" onclick="hideRecipeDetail()"><i class="fas fa-times"></i></button>
+            
+            <article id="recipe-1" class="recipe-article" style="display: none;">
+                <h2>Cookies Socola Chuẩn Vị</h2>
+                <p class="difficulty-stars detail-meta">Độ khó: ⭐</p>
+                
+                <div class="video-placeholder">
+                    <p><iframe width="560" height="350" src="https://www.youtube.com/embed/rEdl2Uetpvo?si=G3tA0R4PzjyIjOjL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+                </div>
+
+                <div class="recipe-body-grid">
+                    <div>
+                        <h3>Nguyên Liệu</h3>
+                        <ul>
+                            <li>200g Bột mì đa dụng</li>
+                            <li>115g Bơ lạt (đã làm mềm)</li>
+                            <li>100g Đường nâu</li>
+                            <li>50g Đường trắng</li>
+                            <li>1 Trứng gà</li>
+                            <li>1 muỗng cà phê Vani</li>
+                            <li>1/2 muỗng cà phê Baking soda</li>
+                            <li>1/4 muỗng cà phê Muối</li>
+                            <li>150g Socola chip</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Các Bước Thực Hiện</h3>
+                        <ol>
+                            <li>**Bước 1:** Đánh bơ với hai loại đường cho đến khi bông, nhẹ.</li>
+                            <li>**Bước 2:** Cho trứng và vani vào, đánh đều.</li>
+                            <li>**Bước 3:** Trộn bột mì, baking soda, muối trong một tô riêng.</li>
+                            <li>**Bước 4:** Từ từ cho hỗn hợp bột vào hỗn hợp bơ, trộn nhẹ nhàng.</li>
+                            <li>**Bước 5:** Cho socola chip vào trộn đều.</li>
+                            <li>**Bước 6:** Dùng muỗng múc bột thành từng viên, đặt lên khay nướng.</li>
+                            <li>**Bước 7:** Nướng ở 175 độ C trong 10-12 phút.</li>
+                        </ol>
+                    </div>
+                </div>
+            </article>
+
+            <article id="recipe-2" class="recipe-article" style="display: none;">
+                <h2>Brownie Cacao Dẻo</h2>
+                <p class="difficulty-stars detail-meta">Độ khó: ⭐⭐</p>
+                
+                <div class="video-placeholder">
+                    <p><iframe width="560" height="350" src="https://www.youtube.com/embed/VvJm4pQZ04s?si=Nw8JRsp2cMlgPxBm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+                </div>
+
+                <div class="recipe-body-grid">
+                    <div>
+                        <h3>Nguyên Liệu</h3>
+                        <ul>
+                            <li>100g Bơ lạt</li>
+                            <li>100g Socola đen (70% cacao)</li>
+                            <li>150g Đường trắng</li>
+                            <li>2 Trứng gà lớn</li>
+                            <li>60g Bột mì đa dụng</li>
+                            <li>30g Bột cacao</li>
+                            <li>1/4 muỗng cà phê Muối</li>
+                            <li>50g Hạt óc chó (tùy chọn)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Các Bước Thực Hiện</h3>
+                        <ol>
+                            <li>**Bước 1:** Đun chảy bơ và socola. Khuấy đều cho đến khi hỗn hợp mịn.</li>
+                            <li>**Bước 2:** Cho đường vào hỗn hợp socola, khuấy tan.</li>
+                            <li>**Bước 3:** Cho từng quả trứng vào, đánh nhanh tay đến khi hòa quyện.</li>
+                            <li>**Bước 4:** Rây bột mì, bột cacao và muối vào, trộn nhẹ nhàng đến khi vừa đủ kết hợp.</li>
+                            <li>**Bước 5:** Đổ hỗn hợp vào khuôn $20\text{x}20\text{cm}$ đã lót giấy nến. Rắc hạt óc chó lên trên.</li>
+                            <li>**Bước 6:** Nướng ở 180 độ C trong khoảng 25-30 phút. Brownie sẽ dẻo hơn nếu mặt trên đã se nhưng bên trong vẫn còn ẩm.</li>
+                        </ol>
+                    </div>
+                </div>
+            </article>
+
+            <article id="recipe-3" class="recipe-article" style="display: none;">
+                <h2>Bánh Flan Sữa Tươi</h2>
+                <p class="difficulty-stars detail-meta">Độ khó: ⭐⭐⭐</p>
+                
+                <div class="video-placeholder">
+                    <p><iframe width="560" height="350" src="https://www.youtube.com/embed/1_q8txKyg4E?si=28FQwS5Gh8uL1jOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+                </div>
+
+                <div class="recipe-body-grid">
+                    <div>
+                        <h3>Nguyên Liệu</h3>
+                        <ul>
+                            <li>200ml Sữa tươi không đường</li>
+                            <li>100ml Kem tươi (Whipping cream)</li>
+                            <li>3 Lòng đỏ trứng gà</li>
+                            <li>2 Trứng gà nguyên quả</li>
+                            <li>80g Đường</li>
+                            <li>Vani</li>
+                            <li>**Caramel:** 50g Đường và 30ml Nước</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Các Bước Thực Hiện</h3>
+                        <ol>
+                            <li>**Bước 1 (Caramel):** Đun chảy đường với nước đến khi chuyển màu cánh gián. Đổ vào đáy khuôn.</li>
+                            <li>**Bước 2 (Trứng):** Đánh nhẹ 3 lòng đỏ và 2 trứng nguyên quả với 40g đường còn lại (không đánh quá bông).</li>
+                            <li>**Bước 3 (Sữa):** Đun nóng sữa tươi và kem tươi với vani (không đun sôi).</li>
+                            <li>**Bước 4 (Hòa trộn):** Từ từ đổ hỗn hợp sữa ấm vào hỗn hợp trứng, vừa đổ vừa khuấy nhẹ nhàng. Lọc hỗn hợp qua rây 2-3 lần.</li>
+                            <li>**Bước 5 (Hấp/Nướng):** Đổ hỗn hợp vào khuôn. Hấp cách thủy hoặc nướng cách thủy ở $150^\circ\text{C}$ trong 40-50 phút.</li>
+                            <li>**Bước 6:** Để nguội và cho vào tủ lạnh ít nhất 4 giờ trước khi dùng.</li>
+                        </ol>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <script>document.addEventListener('DOMContentLoaded', () => {
+    // 1. Menu Toggle cho Mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            // Đổi icon hamburger/X
+            const icon = menuToggle.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // 2. Hiệu ứng Animation on Scroll (slide-up)
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        rootMargin: '0px',
+        threshold: 0.1 // Kích hoạt khi 10% phần tử hiển thị
+    });
+
+    document.querySelectorAll('.slide-up').forEach(element => {
+        observer.observe(element);
+    });
+
+    // 3. Hiệu ứng Sticky Header
+    const header = document.getElementById('main-header');
+    
+    const handleScroll = () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+});</script>
+    <script>// JS đơn giản để xử lý việc hiển thị chi tiết công thức (Đã điều chỉnh để nhận ID)
+       function showRecipeDetail(id) {
+            // 1. Ẩn tất cả các chi tiết công thức khác
+            document.querySelectorAll('.recipe-article').forEach(el => el.style.display = 'none');
+            
+            // 2. Hiện chi tiết công thức được chọn
+            const modal = document.getElementById('recipe-detail-modal');
+            document.getElementById(id).style.display = 'block';
+            
+            // 3. Hiện modal và ngăn cuộn trang nền
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; 
+            
+            // 4. Bổ sung: Lắng nghe sự kiện click vào modal để tắt
+            // Chúng ta chỉ gắn lắng nghe một lần sau khi modal được hiện
+            modal.onclick = function(event) {
+                // Kiểm tra nếu click chính xác vào lớp phủ (modal)
+                // KHÔNG phải các phần tử con bên trong (recipe-detail-content)
+                if (event.target === modal) {
+                    hideRecipeDetail();
+                }
+            };
+        }
+
+        function hideRecipeDetail() {
+            const modal = document.getElementById('recipe-detail-modal');
+            
+            // 1. Tắt modal và cho phép cuộn trang nền
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // 2. Xóa listener để tránh trigger nhầm lẫn
+            modal.onclick = null;
+        }
+        </script>
+</body>
+</html>

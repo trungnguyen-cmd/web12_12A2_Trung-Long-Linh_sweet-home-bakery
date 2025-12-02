@@ -1,0 +1,618 @@
+/* RESET & BASE */
+:root {
+    --color-primary: #5D4037; /* Nâu Cacao */
+    --color-secondary: #FFCC80; /* Vàng Pastel */
+    --color-background: #FFF8E1; /* Kem Sữa */
+    --color-text-dark: #333333;
+    --color-text-light: #f9f9f9;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-bottom: 0.5em;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-light-cream {
+    background-color: #f7f3e8;
+}
+
+/* BUTTONS */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.button.primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.button.primary:hover {
+    background-color: #795548; /* Darker Primary */
+}
+
+.button.secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.button.secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+/* (A) HEADER / NAVIGATION */
+#main-header {
+    background-color: var(--color-background);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#main-header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+}
+
+#main-nav a {
+    margin-left: 25px;
+    font-weight: 400;
+    color: var(--color-text-dark);
+    padding: 5px 0;
+    position: relative;
+}
+
+#main-nav a.active::after,
+#main-nav a:hover::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 2px;
+    background: var(--color-secondary);
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.menu-toggle {
+    display: none; /* Ẩn trên Desktop */
+}
+
+/* HERO SECTION */
+#hero {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('assets/images/placeholder_hero.jpg') no-repeat center center/cover;
+    position: relative;
+    padding-top: 80px; /* Bù cho sticky header */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4); /* Overlay nhẹ */
+}
+
+#hero .container {
+    z-index: 1;
+}
+
+#hero h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+#hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* (B) THE BAND (ABOUT / STORY) */
+.about-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image-wrapper {
+    flex: 1;
+    max-width: 50%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+    transform: scale(1.05);
+}
+
+/* (E) GALLERY / IMAGE COLLECTION */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.9);
+}
+
+/* (C) TOUR DATES / EVENTS */
+.event-schedule {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(93, 64, 55, 0.1); /* Màu nâu cacao nhạt */
+    transition: background-color 0.3s ease;
+}
+
+.event-item:hover {
+    background-color: rgba(255, 204, 128, 0.1); /* Pastel hover */
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.event-meta {
+    font-size: 0.9em;
+    color: #6a6a6a;
+    margin-top: 5px;
+}
+
+.event-meta i {
+    margin-right: 8px;
+    color: var(--color-secondary);
+}
+
+
+/* (D) CONTACT */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+}
+
+.contact-info {
+    padding-right: 30px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-info i {
+    color: var(--color-secondary);
+    width: 25px;
+    margin-right: 5px;
+}
+
+.map-placeholder {
+    height: 250px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+/* 3. RECIPES PAGE STYLES */
+.recipe-page {
+    padding-top: 80px; /* Offset for sticky header */
+}
+
+.page-title {
+    font-size: 3em;
+    margin-bottom: 60px;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.recipe-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-image-wrapper {
+    height: 250px;
+    overflow: hidden;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.recipe-card:hover img {
+    transform: scale(1.05);
+}
+
+.recipe-content {
+    padding: 20px;
+}
+
+.recipe-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.recipe-meta {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #6a6a6a;
+    margin-bottom: 10px;
+}
+
+.recipe-meta i {
+    color: var(--color-secondary);
+    margin-right: 5px;
+}
+
+.difficulty-stars .fas.fa-star {
+    color: var(--color-secondary);
+}
+
+/* Recipe Detail Modal */
+.recipe-detail-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Ẩn mặc định */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.recipe-detail-content {
+    background-color: var(--color-background);
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.recipe-article h2 {
+    font-size: 2.5em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 350px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+.recipe-body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+
+.recipe-body-grid h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.recipe-body-grid ul, .recipe-body-grid ol {
+    margin-left: 20px;
+}
+
+.recipe-body-grid li {
+    margin-bottom: 10px;
+}
+
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN (Mobile/Tablet) */
+@media (max-width: 992px) {
+    /* (A) Header / Navigation */
+    #main-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-background);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    #main-nav.active {
+        display: flex;
+    }
+
+    #main-nav a {
+        margin: 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        color: var(--color-primary);
+    }
+
+    /* Hero */
+    #hero h1 {
+        font-size: 3em;
+    }
+
+    /* (B) About */
+    .about-grid {
+        flex-direction: column;
+    }
+
+    .about-image-wrapper {
+        max-width: 100%;
+    }
+
+    /* (D) Contact */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Recipe Detail */
+    .recipe-body-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipe-detail-content {
+        padding: 20px;
+    }
+}
+/* HIỆU ỨNG KEM BÔNG CHO HERO SECTION */
+.hero-text-box {
+    /* Nền chung */
+    background-color: rgba(255, 255, 255, 0.85); /* Tăng độ trong suốt để nổi hơn */
+    
+    /* Hiệu ứng mờ nhẹ nhàng */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    
+    /* Tạo hiệu ứng MỀM MẠI / KEM BÔNG bằng Border Radius phức tạp */
+    border-radius: 40px 10px 60px 20px / 50px 20px 70px 30px; 
+    
+    padding: 40px 50px; /* Tăng padding để box lớn hơn */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Shadow đậm hơn, sang trọng hơn */
+    max-width: 750px;
+    margin: 0 auto;
+    position: relative;
+    
+    /* Thêm một đường viền kem mỏng (optional) */
+    border: 3px solid var(--color-secondary); 
+}
+
+/* Đảm bảo chữ vẫn nổi bật */
+#hero h1 {
+    color: var(--color-primary);
+    font-size: 4.5em; /* Tăng cỡ chữ để nổi bật hơn */
+    margin-bottom: 0.3em;
+}
+
+#hero p {
+    font-size: 1.4em;
+    color: var(--color-text-dark);
+    margin-bottom: 30px;
+}
+
+/* Responsive cho chữ */
+@media (max-width: 768px) {
+    .hero-text-box {
+        border-radius: 30px 10px 40px 20px / 40px 10px 50px 20px;
+        padding: 25px 30px;
+    }
+    #hero h1 {
+        font-size: 3em;
+    }
+
+}
