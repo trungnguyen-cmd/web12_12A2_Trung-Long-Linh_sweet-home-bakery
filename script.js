@@ -48,4 +48,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', handleScroll);
     
+    // Modal handlers for recipe detail (exposed on window so inline onclick() works)
+    window.showRecipeDetail = function(id) {
+        // Hide all articles
+        document.querySelectorAll('.recipe-article').forEach(el => el.style.display = 'none');
+
+        // Reset all iframes
+        document.querySelectorAll('.recipe-article iframe.responsive-iframe').forEach(iframe => {
+            iframe.src = '';
+        });
+
+        const modal = document.getElementById('recipe-detail-modal');
+        const article = document.getElementById(id);
+        if (!article) return;
+
+        // Show selected article
+        article.style.display = 'block';
+
+        // Load the video's src from data-src (lazy load)
+        article.querySelectorAll('iframe.responsive-iframe').forEach(iframe => {
+            const src = iframe.dataset.src;
+            if (src) iframe.src = src;
+        });
+
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+
+        // Close when clicking on overlay
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                window.hideRecipeDetail();
+            }
+        };
+    };
+
+    window.hideRecipeDetail = function() {
+        const modal = document.getElementById('recipe-detail-modal');
+        if (!modal) return;
+
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+
+        // Stop and reset videos
+        modal.querySelectorAll('iframe.responsive-iframe').forEach(iframe => {
+            iframe.src = '';
+        });
+
+        modal.onclick = null;
+    };
+
 });
